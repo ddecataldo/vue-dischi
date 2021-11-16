@@ -1,10 +1,10 @@
 <template>
     <main>
-        <div class="">
-            <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-5 g-4 py-5">
                 <div
                 class="col"
-                v-for="(album, i) in fetchData"
+                v-for="(album, i) in albumList"
                 :key="i"
                 >
                 <CardAlbum
@@ -39,11 +39,15 @@ export default {
         fetchData() {
 
             axios.get(this.urlApi).then((ajaxResponse) =>  {
-                const albumGenerate = ajaxResponse.data;
-                this.albumList.push(albumGenerate.response);
+                /* const albumGenerate = ajaxResponse.data;
+                this.albumList.push(albumGenerate.response); */
+                this.albumList = ajaxResponse.data.response;
             });
 
         },
+    },
+    mounted(){
+        this.fetchData();
     }
 }
 

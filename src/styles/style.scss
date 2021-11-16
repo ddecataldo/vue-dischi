@@ -1,6 +1,6 @@
 /* NavBar */
 .bg-light {
-    background-color: #2b3a46 !important;
+    background-color: $primary !important;
 }
 .logo{
     width: 30px;
@@ -9,4 +9,28 @@
 /* Main */
 main{
     background-color: #192d3b;
+}
+
+/* Card */
+.card{
+    padding:25px;
+    background-color: $primary;
+    color: $white;
+}
+.card-body{
+    padding: 12px 0 0;
+
+    .card-title{
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    p{
+        margin-bottom: 0;
+    }
+
+    .card-descrption,
+    .card-data{
+        color: #808080;
+    }
 }
